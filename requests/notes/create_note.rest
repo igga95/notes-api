@@ -1,0 +1,16 @@
+POST http://localhost:3001/api/notes 
+Content-Type: application/json
+
+{
+    "content": "MongoDB is incredible",
+    "important": true,
+    "userId": "61d3875c555ed6bdfaa4f978"
+}
+
+###
+POST http://localhost:3001/api/notes 
+Content-Type: application/json
+
+{
+    "important": true
+}
