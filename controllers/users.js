@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt");
 const usersRouter = require("express").Router();
 const User = require("../models/User");
 const catchAsync = require("../utils/catchAsync");
+const validateUsername = require("../middleware/validateUsename");
 
 usersRouter.get(
     "/",
@@ -13,6 +14,7 @@ usersRouter.get(
 
 usersRouter.post(
     "/",
+    catchAsync(validateUsername),
     catchAsync(async (req, res) => {
         const { body } = req;
         const { username, name, password } = body;
@@ -26,8 +28,9 @@ usersRouter.post(
             passwordHash,
         });
 
-        const savedUser = await user.save();
-        res.status(201).json(savedUser);
+        // const savedUser = await user.save();
+        // res.status(201).json(savedUser);
+        res.status(201).json({ hola: "hola" });
     })
 );
 

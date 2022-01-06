@@ -10,7 +10,7 @@ const { log, error } = require("../utils/log");
 
 module.exports = (err, req, res, next) => {
     // colt steele
-    log(err);
+    error(err);
     if (err.name === "CastError") err = { msg: "id malform", status: 400 };
     if (err._message === "User validation failed") err = { msg: err.errors._id.message, status: 400 };
     // if (err._message === "User validation failed") err = { msg: "`username` to be unique", status: 400 };
