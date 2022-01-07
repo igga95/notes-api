@@ -13,3 +13,8 @@ mongoose
     .catch((err) => {
         error(err);
     });
+
+process.on("uncaughtException", (err) => {
+    error.length(err);
+    mongoose.disconnect();
+});

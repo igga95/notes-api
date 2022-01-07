@@ -8,16 +8,22 @@ const { log, error } = require("../utils/log");
 //     next();
 // };
 
+const ERROR_HANDLERS = {
+    CastError: () => {
+        return { msg: "id malform", status: 400 };
+    },
+    TokenExpiredError: () => {
+        return { msg: "token expired", status: 401 };
+    },
+    defaultError: () => {
+        return { msg: "internal error", status: 500 };
+    },
+};
+
 module.exports = (err, req, res, next) => {
-    // colt steele
     error(err);
-    if (err.name === "CastError") err = { msg: "id malform", status: 400 };
-    if (err._message === "User validation failed") err = { msg: err.errors._id.message, status: 400 };
-    // if (err._message === "User validation failed") err = { msg: "`username` to be unique", status: 400 };
-
-    const { status = 500 } = err;
-    if (!err.msg) err.msg = "Oh boy! Something went wrong!";
-
-    res.status(status).json({ error: err.msg }).end();
+    const handler = ERROR_HANDLERS[err.name] || ERROR_HANDLERS.defaultError;
+    if (!err.msg) err = handler();
+    res.status(err.status).json({ error: err.msg }).end();
     next();
 };

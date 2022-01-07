@@ -1,8 +1,9 @@
 const notesRouter = require("express").Router();
 const Note = require("../models/Note");
-const catchAsync = require("../utils/catchAsync");
-const validateNote = require("../middleware/validateNote");
 const User = require("../models/User");
+const catchAsync = require("../utils/catchAsync");
+const userExtractor = require("../middleware/userExtractor");
+const validateNote = require("../middleware/validateNote");
 
 notesRouter.get(
     "/",
@@ -22,9 +23,11 @@ notesRouter.get(
 
 notesRouter.post(
     "/",
+    userExtractor,
     validateNote,
     catchAsync(async (req, res) => {
-        const { content, important = false, userId } = req.body;
+        const { content, important = false } = req.body;
+        const { userId } = req;
         const user = await User.findById(userId);
 
         const newNote = new Note({

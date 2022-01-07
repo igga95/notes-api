@@ -22,5 +22,6 @@ module.exports = {
                 args: "all",
             },
         ],
+        "no-prototype-builtins": "off",
     },
 };
