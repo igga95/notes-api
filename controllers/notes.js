@@ -56,17 +56,20 @@ notesRouter.put(
     "/:id",
     userExtractor,
     catchAsync(async (req, res) => {
+        const { userId } = req;
         const { id } = req.params;
         const note = req.body;
-        const newNoteInfo = {
-            content: note.content,
-            important: note.important || false,
-        };
-        const updateNote = await Note.findByIdAndUpdate(id, newNoteInfo, {
-            runValidators: true,
-            new: true,
-        }).populate("user", { username: 1, name: 1 });
-        res.json(updateNote);
+
+        const noteToUpdate = await Note.find({ _id: id, user: userId }).populate("user", { username: 1, name: 1 });
+
+        if (noteToUpdate.length) {
+            const [updatedNote] = noteToUpdate;
+            updatedNote.content = note.content;
+            updatedNote.important = note.important || updatedNote.important;
+            await updatedNote.save();
+            res.json(updatedNote);
+        }
+        res.json(noteToUpdate);
     })
 );
 
