@@ -12,6 +12,9 @@ const ERROR_HANDLERS = {
     CastError: () => {
         return { msg: "id malform", status: 400 };
     },
+    JsonWebTokenError: () => {
+        return { msg: "token missing or invalid", status: 401 };
+    },
     TokenExpiredError: () => {
         return { msg: "token expired", status: 401 };
     },

@@ -7,16 +7,22 @@ const validateNote = require("../middleware/validateNote");
 
 notesRouter.get(
     "/",
+    userExtractor,
     catchAsync(async (req, res) => {
-        const notes = await Note.find({}).populate("user", { username: 1, name: 1 });
+        const { userId } = req;
+        const notes = await Note.find({ user: userId }).populate("user", { username: 1, name: 1 });
+        // const notes = await Note.find({}).populate("user", { username: 1, name: 1 });
         res.json(notes);
     })
 );
 
 notesRouter.get(
     "/:id",
+    userExtractor,
     catchAsync(async (req, res) => {
-        const note = await Note.findById(req.params.id).populate("user", { username: 1, name: 1 });
+        const { userId } = req;
+        console.log(userId);
+        const note = await Note.find({ _id: req.params.id, user: userId }).populate("user", { username: 1, name: 1 });
         res.json(note);
     })
 );
@@ -48,6 +54,7 @@ notesRouter.post(
 
 notesRouter.put(
     "/:id",
+    userExtractor,
     catchAsync(async (req, res) => {
         const { id } = req.params;
         const note = req.body;
@@ -65,6 +72,7 @@ notesRouter.put(
 
 notesRouter.delete(
     "/:id",
+    userExtractor,
     catchAsync(async (req, res) => {
         await Note.findByIdAndDelete(req.params.id);
         res.status(204).json({}).end();
