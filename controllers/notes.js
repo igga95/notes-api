@@ -77,7 +77,9 @@ notesRouter.delete(
     "/:id",
     userExtractor,
     catchAsync(async (req, res) => {
-        await Note.findByIdAndDelete(req.params.id);
+        const { userId } = req;
+        const deletedNote = await Note.deleteOne({ _id: req.params.id, user: userId });
+        console.log(deletedNote);
         res.status(204).json({}).end();
     })
 );
