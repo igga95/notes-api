@@ -1,6 +1,5 @@
 POST http://localhost:3001/api/notes 
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDc0NWU5MGFjMTNhNmMwODUwNDA5ZiIsInVzZXJuYW1lIjoidXNlcm5hbWUiLCJpYXQiOjE2NDE2NDU5MDgsImV4cCI6MTY0MTczMjMwOH0.gntcmNLo7NVw_OF1zk9cAqiAC77p1KIZJcMSBHKQVn4
 
 {
     "content": "Username note 3",
@@ -12,26 +11,5 @@ POST http://localhost:3001/api/notes
 Content-Type: application/json
 
 {
-    "important": true
-}
-
-###
-POST http://localhost:3001/api/notes 
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDM4NzVjNTU1ZWQ2YmRmYWE0Zjk3OCIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NDE1NTg2NDF9.NGnpOIB51toEIoUzoEV8emMPUDEL-ZHbSEmwWzbd7F8
-
-{
-    "content": "Testing creation of note with JWT token 2",
-    "important": true,
-    "userId": "61d3875c555ed6bdfaa4f978"
-}
-
-###
-POST http://localhost:3001/api/notes 
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDM4NzVjNTU1ZWQ2YmRmYWE0Zjk3OCIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NDE1NjIxNTAsImV4cCI6MTY0MTY0ODU1MH0.r35kaTYKSZCK_KsROFRmG7r8O3ewB7wpkVXII_30FjA
-
-{
-    "content": "Testing creation of note with JWT token, using userExtractor middleware",
     "important": true
 }
