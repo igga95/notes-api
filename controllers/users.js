@@ -7,7 +7,8 @@ const validateUsername = require("../middleware/validateUsename");
 usersRouter.get(
     "/",
     catchAsync(async (req, res) => {
-        const users = await User.find({}).populate("notes", { content: 1, date: 1, important: 1 });
+        // const users = await User.find({}).populate("notes", { content: 1, date: 1, important: 1 });
+        const users = await User.find({});
         res.json(users);
     })
 );

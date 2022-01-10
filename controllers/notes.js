@@ -78,8 +78,14 @@ notesRouter.delete(
     userExtractor,
     catchAsync(async (req, res) => {
         const { userId } = req;
-        const deletedNote = await Note.deleteOne({ _id: req.params.id, user: userId });
-        console.log(deletedNote);
+        const noteId = req.params.id;
+        const { deletedCount } = await Note.deleteOne({ _id: noteId, user: userId });
+        if (deletedCount) {
+            const user = await User.findById(userId);
+            const noteIndex = user.notes.indexOf(noteId);
+            user.notes.splice(noteIndex, 1);
+            await user.save();
+        }
         res.status(204).json({}).end();
     })
 );
