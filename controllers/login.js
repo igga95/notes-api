@@ -21,8 +21,9 @@ loginRouter.post(
             id: user._id,
             username: user.username,
         };
+        const expirationTime = process.env.NODE_ENV === "test" ? 60 * 5 : 60 * 60 * 24; // 5 min
         const token = jwt.sign(userForToken, process.env.JWT_SECRET, {
-            expiresIn: 60 * 60 * 24,
+            expiresIn: expirationTime,
         });
         res.send({
             name: user.name,
