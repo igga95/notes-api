@@ -14,7 +14,12 @@ const notesRouter = require("./controllers/notes");
 const usersRouter = require("./controllers/users");
 const loginRouter = require("./controllers/login");
 
-app.use(cors({ origin: true }));
+app.use(
+    cors({
+        origin: "*",
+        methods: "GET,PUT,POST,DELETE",
+    })
+);
 app.use(express.json());
 
 app.get("/", (req, res) => {
