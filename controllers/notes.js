@@ -65,7 +65,7 @@ notesRouter.put(
         if (noteToUpdate.length) {
             const [updatedNote] = noteToUpdate;
             updatedNote.content = note.content || updatedNote.content;
-            updatedNote.important = note.important || updatedNote.important;
+            updatedNote.important = note.important ?? updatedNote.important;
             await updatedNote.save();
             res.json(updatedNote);
         }
