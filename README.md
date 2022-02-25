@@ -1,10 +1,8 @@
-# RESTful API with Authentication - NodeJS, MongoDB, Mongoose and JWT
+# RESTful Notes API with Authentication
 
-## Modified code-along proyect of 'Bootcamp Fullstack' by midudev.
+## Stack: NodeJS, MongoDB, Mongoose and JWT
 
-## The API can be tested at https://igga95.github.io/#api-tester-section
-
-### You must be logged in, please select one user in the dropdown menu.
+### The API can be tested at my [personal portfolio](https://igga95.github.io/#api-tester-section)
 
 ## Notes:
 
@@ -57,3 +55,6 @@ POST https://vast-escarpment-72140.herokuapp.com/api/users
 POST https://vast-escarpment-72140.herokuapp.com/api/login
 
 <img src="./public/post_login.png" style="width:430px" alt="post login request example"/>
+
+
+#### Modified code-along proyect of 'Bootcamp Fullstack' by midudev.
