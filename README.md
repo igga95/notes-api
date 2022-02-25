@@ -1,8 +1,7 @@
-# Personal portfolio - Iglesias Gabriel - Jr. Backend Developer
+# RESTful API - NodeJS, MongoDB, Mongoose and JWT
 
-## API Tester:
-
-### In the request field (left), the data needs to be written in JSON format (with keys between double quotes and without trailing commas).
+## Modified code-along proyect of 'Bootcamp Fullstack' by midudev.
+## The API can be tested at https://igga95.github.io/#api-tester-section
 
 ### You must be logged in, please select one user in the dropdown menu.
 
@@ -12,27 +11,27 @@
 
 #### GET all:
 
-URI: http://localhost:3001/api/notes
+GET https://vast-escarpment-72140.herokuapp.com/api/notes
 
 #### GET one:
 
-URI: http://localhost:3001/api/notes/id
+GET https://vast-escarpment-72140.herokuapp.com/api/notes/id
 
 #### POST:
 
-URI: http://localhost:3001/api/notes
+POST https://vast-escarpment-72140.herokuapp.com/api/notes
 
 <img src="./public/examples/post_note.png" style="width:430px" alt="post note request example"/>
 
 #### PUT:
 
-URI: http://localhost:3001/api/notes/id
+PUT https://vast-escarpment-72140.herokuapp.com/api/notes/id
 
 <img src="./public/examples/put_note.png" style="width:430px" alt="put note request example"/>
 
 #### DELETE:
 
-URI: http://localhost:3001/api/notes/id
+DELETE https://vast-escarpment-72140.herokuapp.com/api/notes/id
 
 ## Users:
 
@@ -40,11 +39,11 @@ URI: http://localhost:3001/api/notes/id
 
 #### GET all:
 
-URI: http://localhost:3001/api/users
+GET https://vast-escarpment-72140.herokuapp.com/api/users
 
 #### POST:
 
-URI: http://localhost:3001/api/users
+POST https://vast-escarpment-72140.herokuapp.com/api/users
 
 <img src="./public/examples/post_user.png" style="width:430px" alt="post user request example"/>
 
@@ -54,6 +53,6 @@ URI: http://localhost:3001/api/users
 
 #### POST:
 
-URI: http://localhost:3001/api/login
+POST https://vast-escarpment-72140.herokuapp.com/api/login
 
 <img src="./public/examples/post_login.png" style="width:430px" alt="post login request example"/>
