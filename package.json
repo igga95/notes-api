@@ -7,7 +7,9 @@
         "dev": "NODE_ENV=development nodemon app.js",
         "lint": "eslint .",
         "start": "NODE_ENV=production node app.js",
-        "test": "NODE_ENV=test PORT=1234 jest --verbose tests/notes.test.js",
+        "test": "npm run test-notes && npm run test-users",
+        "test-notes": "NODE_ENV=test PORT=1234 jest --verbose tests/notes.test.js",
+        "test-users": "NODE_ENV=test PORT=1234 jest --verbose tests/user.test.js",
         "test:watch": "npm run test -- --watch",
         "ava": "NODE_ENV=test PORT=1234 ava --serial",
         "ava:watch": "npm run testAVA -- --watch"
