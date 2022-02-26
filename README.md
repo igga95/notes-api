@@ -1,9 +1,8 @@
-# RESTful API - NodeJS, MongoDB, Mongoose and JWT
+# RESTful Notes API with Authentication
 
-## Modified code-along proyect of 'Bootcamp Fullstack' by midudev.
-## The API can be tested at https://igga95.github.io/#api-tester-section
+## Stack: NodeJS, MongoDB, Mongoose and JWT
 
-### You must be logged in, please select one user in the dropdown menu.
+### The API can be tested at my [personal portfolio](https://igga95.github.io/#api-tester-section)
 
 ## Notes:
 
@@ -21,13 +20,13 @@ GET https://vast-escarpment-72140.herokuapp.com/api/notes/id
 
 POST https://vast-escarpment-72140.herokuapp.com/api/notes
 
-<img src="./public/examples/post_note.png" style="width:430px" alt="post note request example"/>
+<img src="./public/post_note.png" style="width:430px" alt="post note request example"/>
 
 #### PUT:
 
 PUT https://vast-escarpment-72140.herokuapp.com/api/notes/id
 
-<img src="./public/examples/put_note.png" style="width:430px" alt="put note request example"/>
+<img src="./public/put_note.png" style="width:430px" alt="put note request example"/>
 
 #### DELETE:
 
@@ -45,7 +44,7 @@ GET https://vast-escarpment-72140.herokuapp.com/api/users
 
 POST https://vast-escarpment-72140.herokuapp.com/api/users
 
-<img src="./public/examples/post_user.png" style="width:430px" alt="post user request example"/>
+<img src="./public/post_user.png" style="width:430px" alt="post user request example"/>
 
 ## Login:
 
@@ -55,4 +54,7 @@ POST https://vast-escarpment-72140.herokuapp.com/api/users
 
 POST https://vast-escarpment-72140.herokuapp.com/api/login
 
-<img src="./public/examples/post_login.png" style="width:430px" alt="post login request example"/>
+<img src="./public/post_login.png" style="width:430px" alt="post login request example"/>
+
+
+#### Modified code-along proyect of 'Bootcamp Fullstack' by midudev.
